@@ -1,20 +1,13 @@
-<html>
-    <head>
-        <title>Django blog</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    </head>
-    <body>
-        <div>
-    <h1><a href="/">Django Girls Blog</a></h1>
-</div>
-
+{% extends 'blog/base.html' %}
+{% block content %}
 {% for post in posts %}
-    <div>
+    <div class="post">
+                    <div class="date">
         <p>published: {{ post.published_date }}</p>
+                    </div>
         <h1><a href="{{post.silka}}">{{ post.title }}</a></h1>
         <p>{{ post.text|linebreaksbr }}</p>
+        <hr>
     </div>
 {% endfor %}
-    </body>
-</html>
+{% endblock %}
